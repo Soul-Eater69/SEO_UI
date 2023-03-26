@@ -44,6 +44,7 @@ const useStyles = makeStyles({
 
 const OnPageSeo = ({ url, seoData }) => {
   const classes = useStyles();
+  console.log("url",url)
   const pathname = new URL(url).pathname;
   const isSubPage = pathname.split("/").length > 2;
 
