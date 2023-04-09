@@ -6,6 +6,7 @@ import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import HighlightText from "./HighlightText";
 import AccordionButton from "./AccordionButton";
+import GradeSection from "./GradeSection";
 
 const useStyles = makeStyles({
   main_container: {
@@ -44,7 +45,6 @@ const useStyles = makeStyles({
 
 const OnPageSeo = ({ url, seoData }) => {
   const classes = useStyles();
-  console.log("url",url)
   const pathname = new URL(url).pathname;
   const isSubPage = pathname.split("/").length > 2;
 
@@ -53,6 +53,9 @@ const OnPageSeo = ({ url, seoData }) => {
       <h2 style={{ textAlign: "left", padding: "2rem" }}>
         On-Page SEO Results
       </h2>
+
+      <GradeSection seoData={seoData} />
+
       <DataHolder
         pass={seoData["title_data"]["pass"]}
         required={seoData["title_data"]["required"]}

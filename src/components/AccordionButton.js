@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { makeStyles } from "@mui/styles";
 import { Button } from "@mui/material";
-import "./AccordianButton.css"
+import "./AccordianButton.css";
 
 const useStyles = makeStyles({
   th: {
@@ -24,17 +24,28 @@ const AccordionButton = ({ data, children, sx }) => {
   const classes = useStyles();
   const [isOpen, setIsOpen] = useState(true);
 
-
   return (
-    <div className="accordion-container" style={{...sx}}>
+    <div className="accordion-container" style={{ ...sx }}>
       {isOpen && (
-        <Button style={{background:"black"}} variant="contained" onClick={() => setIsOpen(!isOpen)}>Show Details</Button>
+        <Button
+          style={{ background: "black", margin: ".8rem" }}
+          variant="contained"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          Show Details
+        </Button>
       )}
 
       {!isOpen && (
         <>
           {children}
-          <Button style={{background:"black"}} variant="contained" onClick={() => setIsOpen(!isOpen)}>Hide Details</Button>
+          <Button
+            style={{ background: "black", margin: ".8rem" }}
+            variant="contained"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            Hide Details
+          </Button>
         </>
       )}
     </div>

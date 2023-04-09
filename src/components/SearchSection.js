@@ -67,7 +67,6 @@ const SearchSection = () => {
     return urlRegex.test(url) || domainRegex.test(url);
   };
   
-
   const handleAudit = () => {
     const url = urlRef.current.value;
     if (url === "" || !isValidUrl(url)) {
@@ -115,7 +114,9 @@ const SearchSection = () => {
         <button className={classes.audit_btn} onClick={handleAudit}>
           Audit
         </button>
+
       </div>
+      
     </section>
   );
 };

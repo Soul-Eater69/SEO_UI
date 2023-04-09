@@ -12,6 +12,7 @@ import javascriptImage from "../assets/javascriptImage.png";
 import CustomGuage from "./CustomGuage";
 import AccordionButton from "./AccordionButton";
 import { CloseRounded, DoneOutline, DoneRounded } from "@mui/icons-material";
+import GradeSection from "./GradeSection";
 
 const useStyles = makeStyles({
   progressBarWrapper: {
@@ -212,7 +213,10 @@ const Performance = ({ url, seoData }) => {
 
   return (
     <div>
-      <h2 style={{ textAlign: "left", padding: "2rem" }}>Performance Results</h2>
+      <h2 style={{ textAlign: "left", padding: "2rem" }}>
+        Performance Results
+      </h2>
+      <GradeSection seoData={seoData} />
       <DataHolder
         pass={seoData["pageSpeed_data"]["pass"]}
         required={seoData["pageSpeed_data"]["required"]}
@@ -351,10 +355,10 @@ const Performance = ({ url, seoData }) => {
                       className={classes.progress}
                       style={{
                         width: `${
-                          (100 -
+                          100 -
                           seoData["website_data"]["data"][label.toLowerCase()][
                             "rate"
-                          ].toFixed(2))
+                          ].toFixed(2)
                         }%`,
                         backgroundColor: labelColors[idx],
                       }}

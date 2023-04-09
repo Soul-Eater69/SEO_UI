@@ -10,6 +10,7 @@ import GaugeChart from "react-gauge-chart";
 import mobile from "./mobile.png";
 import tablet from "./tablet.png";
 import Chart from "react-apexcharts";
+import GradeSection from "./GradeSection";
 
 const useStyles = makeStyles({
   main_container: {
@@ -100,6 +101,7 @@ const Usability = ({ url, seoData }) => {
   return (
     <div className={classes.main_container}>
       <h2 style={{ textAlign: "left", padding: "2rem" }}>Usability</h2>
+      <GradeSection seoData={seoData} />
       <DataHolder
         toIndex={2}
         pass={seoData["device_rendering"]["pass"]}
@@ -250,7 +252,7 @@ const Usability = ({ url, seoData }) => {
         </p>
         <Row style={{ padding: "1.2rem 3rem" }}>
           <Col md={5} sm={12}>
-          <Table striped >
+            <Table striped>
               <thead>
                 <tr>
                   <th>Lab Data</th>
@@ -271,7 +273,7 @@ const Usability = ({ url, seoData }) => {
             </Table>
           </Col>
           <Col md={7} sm={12}>
-          <Table striped>
+            <Table striped>
               <thead>
                 <tr>
                   <th>Opportunities</th>
