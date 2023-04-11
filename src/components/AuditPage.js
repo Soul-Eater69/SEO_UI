@@ -45,7 +45,7 @@ const AuditPage = () => {
     const desktopScreenshotURL =
       usabilityData?.device_rendering?.desktop_screenshot;
 
-    const { grade, recommendation, gradePercentage } = gradeCalculator({
+    const { grade, recommendation, priorityGradePercentage } = gradeCalculator({
       recommendations,
       seoData,
       usabilityData,
@@ -58,7 +58,7 @@ const AuditPage = () => {
         desktopScreenshotURL,
         grade,
         recommendation,
-        gradePercentage,
+        priorityGradePercentage,
       },
     };
   };
@@ -149,7 +149,7 @@ const AuditPage = () => {
               recommendation={initData.recommendation}
               screenshotUrl={initData.desktopScreenshotURL}
               grade={initData.grade}
-              gradePercentage={initData.gradePercentage}
+              gradePercentage={initData.priorityGradePercentage}
               recommendations={recommendations}
               onPageScore={{
                 grade: seoData["grade"],
